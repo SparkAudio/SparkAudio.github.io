@@ -1,0 +1,7 @@
+"zhisheng_46": {
+"index": "zhisheng_46",
+"prompt_text": "有一次我跟我的三个领导坐电梯去吃饭，大家可能知道啊，在电梯里有一项潜规则是谁的地位越低，谁就应该按这个电梯按键。但我当时就认为是谁离得近，谁按。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data/wavs/zhisheng_46.wav",
+"text_zh": "我去便利店买个水，结账的时候，老板问我‘你要袋子吗？’ 我说‘不用，手上就有口袋’，他看着我一眼，然后很认真地说‘那就请尽量不要放进袋子里’。",
+"text_en": "I went to a convenience store to buy a bottle of water. At the checkout, the cashier asked, \"Do you need a bag?\" I said, \"No, I already have pockets.\" He looked at me for a moment, then seriously said, \"In that case, please try not to put it in a bag.\""
+}

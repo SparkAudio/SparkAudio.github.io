@@ -1,0 +1,7 @@
+"jialing_02": {
+"index": "jialing_02",
+"prompt_text": "跟观众分享我人生的感悟。因为我们都是只活一次，我们也都是第一次活，我们也不知道该怎么活着。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/jialing_02.mp3",
+"text_zh": "但有时候，你会想，人工智能是不是也像我们一样，也在探索自己的“人生”？它们从数据里学到知识，从经验里不断进步。我们不知道未来它会成为什么样，但它注定会在我们的生活中扮演越来越重要的角色。",
+"text_en": "Sometimes, you might wonder, is artificial intelligence, like us, also exploring its own \"life\"? It learns knowledge from data and continuously improves from experience. We don't know what it will become in the future, but it is destined to play an increasingly important role in our lives."
+},

@@ -1,0 +1,7 @@
+"seedtts-01": {
+"index": "seedtts-01",
+"prompt_text": "Some call me nature. Others call me mother Nature. I've been here for over 4.5 billion years, 22500 times longer than you.",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data/wavs/seedtts-01.wav",
+"text_zh": "顿时，气氛变得沉郁起来。乍看之下，一切的困扰仿佛都围绕在我身边。我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我：'无论如何，都要冷静下来，重新开始。'",
+"text_en": "I don't really care what you call me. I've been a silent spectator, watching species evolve, empires rise and fall. But always remember, I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the consequences."
+},

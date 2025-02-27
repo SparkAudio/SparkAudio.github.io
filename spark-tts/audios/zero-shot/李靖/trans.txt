@@ -1,0 +1,7 @@
+"nezhai_27": {
+"index": "nezhai_27",
+"prompt_text": "你可知为什么人们都怕你。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data/wavs/nezhai_27.wav",
+"text_zh": "你可知为什么他们都不愿意和你合作？因为你太聪明了，聪明到让他们觉得自己毫无优势。他们害怕与你站在同一起跑线，怕被你的智慧甩得远远的。其实，真正让他们害怕的，不是你的聪明，而是他们自己内心的自卑和不自信。",
+"text_en": "Do you know why they refuse to work with you? Because you're too smart, smart enough to make them feel like they have no advantage. They're afraid to stand on the same starting line with you, afraid of being left far behind by your intelligence. In reality, what they're really afraid of isn't your smarts, but their own insecurity and lack of self-confidence."
+},

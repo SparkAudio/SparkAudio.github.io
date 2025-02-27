@@ -1,0 +1,7 @@
+"Ben_0": {
+"index": "Ben_0",
+"prompt_text": "So maybe, that you would prefer to forgo my secret rather than consent to becoming a prisoner here for what might be several days.",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/Ben_0.wav",
+"text_zh": "你看，人生有趣的地方就在于，它从不会完全按你的计划行进。你以为自己已经洞察一切，在脑海中勾勒出清晰的蓝图——我会在这里，我会做这个，一切都会自然而然地步入正轨。",
+"text_en": "You see, the funny thing about life is that it never really goes the way you plan. You think you've got it all figured out, mapped out neatly in your head—this is where I'll be, this is what I'll do, and everything will fall into place. "
+},

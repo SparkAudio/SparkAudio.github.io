@@ -1,0 +1,7 @@
+"rick_0": {
+"index": "rick_0",
+"prompt_text": "Yeah, that's the difference between you and me, Morty and never go back to the carpet store.",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/rick_0.wav",
+"text_zh": "那么我永远不会和那个人谈论巨蛇、原始森林或星星。我会把自己降到他的水平。",
+"text_en": "Then I would never talk to that person about boa constrictors, or primeval forests, or stars. I would bring myself down to his level."
+},

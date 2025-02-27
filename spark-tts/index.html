@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.88.1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/normalize.css">
+
+	<title>Spark-TTS</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+
+<div class="container" >
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
+	<div class="text-center">
+	<h2>Spark-TTS: </h2>
+      <h3>An Efficient LLM-Based Text-to-Speech Model with Single-Stream Decoupled Speech Tokens</h3>
+      <!-- [<a href="https://arxiv.org/abs/2406.02430">Paper</a>] -->
+		<!-- [<a href="https://arxiv.org/abs/2303.03926">Paper</a>] -->
+		<!-- [<a href="https://arxiv.org/abs/2306.02982">Paper</a>] -->
+
+        <!-- <p class="fst-italic mb-0">
+        	<br>
+          Spark-TTS
+      <p></p>
+        </p>
+        <p><b>SparkAudio</b></p> -->
+	</div>
+
+	<p>
+		<strong>Spark-TTS</strong>, a novel system built upon our proposed BiCodec, a single-stream speech codec that strategically decomposes speech into two complementary token types: low-bitrate semantic tokens for linguistic content and fixed-length global tokens for speaker-specific attributes. This disentangled representation, combined with the Qwen2.5 LLM and a chain-of-thought (CoT) generation approach, enables both coarse-grained attribute control (e.g., gender, pitch level) and fine-grained parameter adjustment (e.g., precise pitch values, speaking rate).
+	</p>
+
+	<p>
+	<b>Contents</b>
+      <ul>
+		<li><a href="#zero-shot-inference">Inference Overview of Voice Cloning</a></li>
+		<li><a href="#controlled-generation-inference">Inference Overview of Controlled Generation</a></li>
+        <li><a href="#zero-shot-TTS-samples">Zero-shot TTS (Voice Cloning)</a></li>
+        <li><a href="#coarse-grained_control">Coarse-Grained Control</a></li>
+		<li><a href="#fine-grained_control">Fine-Grained Control</a></li>
+        
+      </ul>
+	</p>
+
+	
+</div>
+
+
+<div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">		
+	<h2 id="zero-shot-inference" style="text-align: center;">Inference Overview of Voice Cloning</h2>
+	<body>
+	<p style="text-align: center;">
+		<img src="figures/infer_voice_cloning.png" height="400" width="1000">
+	</p>
+	</body>
+		<p style="text-align: center;" >
+			<b>Figure 1.</b> An overview of the Spark-TTS inference pipeline for zero-shot TTS (Voice Cloning).
+		</p>
+</div>
+
+
+<div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">		
+	<h2 id="controlled-generation-inference" style="text-align: center;">Inference Overview of Controlled Generation</h2>
+	<body>
+	<p style="text-align: center;">
+		<img src="figures/infer_control.png" height="400" width="1000">
+	</p>
+	</body>
+		<p style="text-align: center;" >
+			<b>Figure 2.</b> An overview of the Spark-TTS inference pipeline for controlled generation.
+		</p>
+</div>
+
+
+
+
+<div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
+	<h2 id="zero-shot-TTS-samples" style="text-align: center;">Zero-shot TTS (Voice Cloning)</h2>
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+				<thead>
+				<tr>
+				<th style="vertical-align : middle;text-align: center">Language </th>
+				<th style="vertical-align : middle;text-align: center">Prompt </th>
+				<th style="vertical-align : middle;text-align: center">Same Language Generation</th>
+				<th style="vertical-align : middle;text-align: center">Cross-linugal Generation</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;" rowspan="8">EN</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-01/seedtts-01_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>From Seed-TTS's Demo</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-01/seedtts-01_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>I don't really care what you call me. I've been a silent spectator, watching species evolve, empires rise and fall. But always remember, I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the consequences.</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-01/seedtts-01_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>顿时，气氛变得沉郁起来。乍看之下，一切的困扰仿佛都围绕在我身边。我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我：“无论如何，都要冷静下来，重新开始。”</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-02/seedtts-02_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>From Seed-TTS's Demo</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-02/seedtts-02_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>Dealing with family secrets is never easy. Yet, sometimes, omission is a form of protection, intending to safeguard some from the harsh truths. One day, I hope you understand the reasons behind my actions. Until then, Anna, please, bear with me.</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-02/seedtts-02_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>处理家庭秘密从来都不是一件容易的事。然而，有时候，隐瞒是一种保护形式，旨在保护一些人免受残酷的真相伤害。有一天，我希望你能理解我行为背后的原因。在那之前，安娜，请容忍我。</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-03/seedtts-03_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>From Seed-TTS's Demo</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-03/seedtts-03_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>The combinations of different textures and flavors create a perfect harmony. The succulence of the steak, the tartness of the cranberries, the crunch of pine nuts, and creaminess of blue cheese make it a truly delectable delight. Enjoy your culinary adventure!</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/seedtts-03/seedtts-03_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>听着你的话，我心里五味杂陈。虽然我愿意一直在你身边，承担一切不幸，但我知道只有让你自己面对，才能真正让你变得更强大。所以，你要记得，无论面对何种困难，都请你坚强，我会在心里一直支持你的。</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/trump/trump_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>Donald Trump</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/trump/trump_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>We know technology is advancing quickly, but AI is moving even faster. It's already transforming our lives – from the way we work and stay connected, to how we tackle some of the world's biggest challenges.</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/trump/trump_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>我们知道技术发展很快，但人工智能的发展更为迅速。它已经在改变我们的生活——从我们的工作和联系方式，到我们如何应对世界上最大的挑战。</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/Benedict_Cumberbatch/Ben_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>Benedict Cumberbatch</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/Benedict_Cumberbatch/Ben_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>You see, the funny thing about life is that it never really goes the way you plan. You think you've got it all figured out, mapped out neatly in your head—this is where I'll be, this is what I'll do, and everything will fall into place. </td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/Benedict_Cumberbatch/Ben_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>你看，人生有趣的地方就在于，它从不会完全按你的计划行进。你以为自己已经洞察一切，在脑海中勾勒出清晰的蓝图——我会在这里，我会做这个，一切都会自然而然地步入正轨。</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/rick/rick_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>Rick<br>(from Rick and Morty)</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/rick/rick_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>Then I would never talk to that person about boa constrictors, or primeval forests, or stars. I would bring myself down to his level.</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/rick/rick_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>那么我永远不会和那个人谈论巨蛇、原始森林或星星。我会把自己降到他的水平。</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/furina/furina_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>Furina<br>(from Genshin Impact)</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/furina/furina_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>I'm very confident in my singing skills, but there aren't many pieces of music that are worthy of my vocal prowess. I hope the creatives in the theater troupe get their act together and don't keep me waiting in vain.</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/furina/furina_zh0.wav" autoplay/>Your browser does not support the audio element.</audio><br>我对自己的歌唱水平还是很有自信的，不过值得我开口唱诵的段落可不多。希望那些剧团里的创作者们加把劲，不要让我等太久。</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/zhongli/zhongli_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>Zhongli<br>(from Genshin Impact)</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/zhongli/zhongli_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>They were loyal servants of Liyue. They lived through a bitter war and sacrificed much. All of Liyue, from harbor to chasm, is indebted to the yakshas for their protection over the years.</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/zhongli/zhongli_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>夜叉一族是璃月的功臣，他们历经战事，牺牲良多。近至海港，远至层岩，一直以来，璃月都因他们的庇佑而平安。</td>
+					</tr>
+					
+					<tr>
+						<td style="vertical-align : middle;text-align:center;" rowspan="16">ZH</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/houyi/houyi_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio>后羿 Hou Yi</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/houyi/houyi_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>有一种撕心裂肺的感觉，是辣椒，我加了辣椒！</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/houyi/houyi_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>There's this heart-wrenching feeling—it's the chili, I added chili!</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/广告口播/ad_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>赞助商声明<br>Sponsor Statement</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/广告口播/ad_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>智能生活，触手可及，本节目由致力于人工智能创新的未来公司冠名播出。数据驱动决策，为你加速未来，本节目由深度学习技术领导者，未来科技特约播出。打造智慧城市新时代，本节目由未来智能硬件先锋，未来科技赞助播出。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/广告口播/ad_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>Smart living, within reach. This programme is proudly sponsored by Future Company, dedicated to AI innovation. Data-driven decision-making, accelerating your future. This programme is brought to you by the leaders in deep learning technology, Future Tech. Building the new era of smart cities, this programme is sponsored by Future Technology, a pioneer in intelligent hardware.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/鲁豫/luyu_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>陈鲁豫 Chen Luyu</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/鲁豫/luyu_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>你知道吗，人工智能就像是我们生活中的一个“无形伙伴”，它不声不响地走进了我们的世界，改变了我们的工作、生活、甚至思维方式。它让我们看到了很多可能性，也让我们意识到，未来的生活可能比我们想象的还要复杂和美好。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/鲁豫/luyu_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>Did you know that artificial intelligence is like an "invisible partner" in our lives? It quietly entered our world, changing our work, our lives, and even the way we think. It has shown us many possibilities and made us realize that the future could be more complex and beautiful than we imagine.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/杨澜/yanglan_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>杨澜 Yang Lan</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/杨澜/yanglan_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>语音合成技术，其实早已经悄悄走进了我们的生活。从智能语音助手，到有声读物，再到个性化语音复刻，这项技术正在改变我们获取信息、与世界互动的方式。而且它的进步速度，远超我们的想象。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/杨澜/yanglang_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>Speech synthesis technology has quietly integrated into our daily lives. From smart voice assistants to audiobooks and even personalised voice cloning, this technology is transforming the way we access information and interact with the world. Moreover, its advancement is progressing at a pace far beyond our imagination.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/刘德华/dehua_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>刘德华 Andy Lau</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/刘德华/dehua_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>所以我觉得好的技术，它一定是有温度的，能够真正服务于大家，而不是冷冰冰地摆在那里。就像现在的语音合成技术，越来越自然，越来越贴近人们的需求，这种发展是有生命力的。它就跟当年那些突破性的科技一样，一开始可能觉得很新鲜，但慢慢地，它就融入生活，变成大家离不开的一部分了。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/刘德华/dehua_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>I think good technology should feel warm and truly serve people, not just sit there like something cold and lifeless. Take speech synthesis, for example—it's getting more natural and closer to what people actually need. That's real progress, something with life in it. It's just like those game-changing technologies from the past—at first, they seemed new and exciting, but before you know it, they become a part of everyday life, something we can't imagine living without.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/贾玲/jialing_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>贾玲 Jia Ling</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/贾玲/jialing_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>但有时候，你会想，人工智能是不是也像我们一样，也在探索自己的“人生”？它们从数据里学到知识，从经验里不断进步。我们不知道未来它会成为什么样，但它注定会在我们的生活中扮演越来越重要的角色。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/贾玲/jialing_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>Sometimes, you might wonder, is artificial intelligence, like us, also exploring its own "life"? It learns knowledge from data and continuously improves from experience. We don't know what it will become in the future, but it is destined to play an increasingly important role in our lives.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/周杰伦/jay_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>周杰伦 Jay Chou</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/周杰伦/jay_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>我觉得这种运动其实不是说靠机会的，我觉得对每个人来讲，像我们歌手来讲，我觉得其实都是你要自己去努力，然后才可以达到自己的梦想。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/周杰伦/jay_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>I don't think this kind of sport is about relying on luck. For each of us, especially for singers like us, I believe it's all about putting in the effort yourself. Only then can you reach your dreams.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/徐志胜/zhisheng_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>徐志胜 Xu Zhisheng</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/徐志胜/zhisheng_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>我去便利店买个水，结账的时候，老板问我‘你要袋子吗？’ 我说‘不用，手上就有口袋’，他看着我一眼，然后很认真地说‘那就请尽量不要放进袋子里’。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/徐志胜/zhisheng_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>I went to a convenience store to buy a bottle of water. At the checkout, the cashier asked, "Do you need a bag?" I said, "No, I already have pockets." He looked at me for a moment, then seriously said, "In that case, please try not to put it in a bag."</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/马云/mayun_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>马云 Jack Ma</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/马云/mayun_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>我们每个人都在追求不同的目标，很多人认为成功就是要赚很多钱，但我认为，成功的真正含义是：如何让你的想法改变世界，让更多的人受益。所以，不要怕失败，不要怕挫折，最重要的是，你要始终保持一颗学习的心，永远不放弃。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/马云/mayun_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>We all pursue different goals. Many think success means making money, but I believe it's about changing the world and helping others. So, don't fear failure or setbacks—keep learning and never give up.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/余承东/yuchengdong_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>余承东 Richard Yu</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/余承东/yuchengdong_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>我们正在不断打破技术的边界，打造更加智能、更加人性化的产品。未来的智能手机、智能设备，将不再仅仅是工具，它们将成为我们生活的一部分，帮助我们更加高效、更加便捷地与世界连接。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/余承东/yuchengdong_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>We're pushing technology's limits to create smarter, more user-friendly products. In the future, smartphones and smart devices will be part of our lives, helping us connect more easily and efficiently.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/芙宁娜/furina_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>芙宁娜 Furina<br>(from Genshin Impact)</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/芙宁娜/furina_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>我对自己的歌唱水平还是很有自信的，不过值得我开口唱诵的段落可不多。希望那些剧团里的创作者们加把劲，不要让我等太久。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/芙宁娜/furina_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>I'm very confident in my singing skills, but there aren't many pieces of music that are worthy of my vocal prowess. I hope the creatives in the theater troupe get their act together and don't keep me waiting in vain.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/钟离/zhongli_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>钟离 Zhongli<br>(from Genshin Impact)</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/钟离/zhongli_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>夜叉一族是璃月的功臣，他们历经战事，牺牲良多。近至海港，远至层岩，一直以来，璃月都因他们的庇佑而平安。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/钟离/zhongli_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>They were loyal servants of Liyue. They lived through a bitter war and sacrificed much. All of Liyue, from harbor to chasm, is indebted to the yakshas for their protection over the years.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/殷夫人/nezhai_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>殷夫人 Lady Yin<br>(from Nezha: Birth of the Demon Child)</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/殷夫人/nezhai_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>你是天地间最独特的存在，所有的磨难只是为你铺设更坚固的道路。无论前方有多少风雨，我都相信，你必定能够撑起一片属于自己的天空。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/殷夫人/nezhai_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>You are the most unique existence in the world, and all the hardships are just paving a stronger path for you. No matter how many storms lie ahead, I believe you will definitely be able to hold up a sky that belongs to you.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/李靖/lijing_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>李靖 Li Jing<br>(from Nezha: Birth of the Demon Child)</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/李靖/lijing_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>你可知为什么他们都不愿意和你合作？因为你太聪明了，聪明到让他们觉得自己毫无优势。他们害怕与你站在同一起跑线，怕被你的智慧甩得远远的。其实，真正让他们害怕的，不是你的聪明，而是他们自己内心的自卑和不自信。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/李靖/lijing_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>Do you know why they refuse to work with you? Because you're too smart, smart enough to make them feel like they have no advantage. They're afraid to stand on the same starting line with you, afraid of being left far behind by your intelligence. In reality, what they're really afraid of isn't your smarts, but their own insecurity and lack of self-confidence.</td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/哪吒/nezhai_promptvn.wav" autoplay/>Your browser does not support the audio element.</audio><br>哪吒 Nezha<br>(from Nezha: Birth of the Demon Child)</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/哪吒/nezhai_zh.wav" autoplay/>Your browser does not support the audio element.</audio><br>他们说我注定不配拥有什么，注定要背负那些沉重的枷锁，活在他们的期望里。每天都得做那些他们安排好的事，像个没有自由的傀儡，根本没法活成自己。这个世界，这些人，真的一点也不值得我去在乎。</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/zero-shot/哪吒/nezhai_en.wav" autoplay/>Your browser does not support the audio element.</audio><br>They say I'm destined to have nothing, doomed to carry those heavy chains, living according to their expectations. Every day, I'm forced to do the things they've planned for me, like a puppet with no freedom, unable to live as myself. This world, these people, really aren't worth my concern at all.</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+</div>
+
+
+
+<div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
+	<h2 id="coarse-grained_control" style="text-align: center;">Coarse-Grained Control</h2>
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+				<thead>
+				<tr>
+				<th style="vertical-align : middle;text-align: center">Pitch Level </th>
+				<th style="vertical-align : middle;text-align: center">Speed Level </th>
+				<th style="vertical-align : middle;text-align: center"> Generation for Male </th>
+				<th style="vertical-align : middle;text-align: center"> Generation for Female </th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">Low</td>
+						<td style="vertical-align : middle;text-align:center;">Slow</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_low_speed_low_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_low_speed_low_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">Low</td>
+						<td style="vertical-align : middle;text-align:center;">Fast</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_low_speed_high_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_low_speed_high_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">High</td>
+						<td style="vertical-align : middle;text-align:center;">Fast</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_high_speed_high_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_high_speed_high_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">High</td>
+						<td style="vertical-align : middle;text-align:center;">Slow</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_high_speed_low_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_high_speed_low_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">Very Low</td>
+						<td style="vertical-align : middle;text-align:center;">Very Slow</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_very_low_speed_very_low_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_very_low_speed_very_low_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">Very Low</td>
+						<td style="vertical-align : middle;text-align:center;">Very Fast</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_very_low_speed_very_high_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_very_low_speed_very_high_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">Very High</td>
+						<td style="vertical-align : middle;text-align:center;">Very Fast</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_very_high_speed_very_high_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_very_high_speed_very_high_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">Very High</td>
+						<td style="vertical-align : middle;text-align:center;">Very Slow</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_very_high_speed_very_low_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_very_high_speed_very_low_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">Moderate</td>
+						<td style="vertical-align : middle;text-align:center;">Moderate</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/male/pitch_moderate_speed_moderate_zh_male.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/joint/female/pitch_moderate_speed_moderate_en_female.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+</div>
+
+
+
+<div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
+	<h2 id="fine-grained_control" style="text-align: center;">Fine-Grained Control</h2>
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+				<thead>
+				<tr>
+				<th style="vertical-align : middle;text-align: center">Pitch Value for Male (Mel)<br> The range of all values falls within Moderate.  </th>
+				<th style="vertical-align : middle;text-align: center"> Generation for Chinese <br>(4 SPS) </th>
+				<th style="vertical-align : middle;text-align: center">Pitch Value for Female (Mel)<br>The range of all values falls within Moderate. </th>
+				<th style="vertical-align : middle;text-align: center"> Generation for English <br>(5 SPS)</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">165</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/male/male_pitch_165.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;">265</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/female/female_pitch_265.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">175</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/male/male_pitch_175.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;">275</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/female/female_pitch_275.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">185</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/male/male_pitch_185.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;">285</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/female/female_pitch_285.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">195</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/male/male_pitch_195.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;">295</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/female/female_pitch_295.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : middle;text-align:center;">205</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/male/male_pitch_205.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+						<td style="vertical-align : middle;text-align:center;">305</td>
+						<td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/control/fine_grained/female/female_pitch_305.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+</div>
+
+
+
+
+</article>
+</main>
+</div>
+
+</body>
+</html>

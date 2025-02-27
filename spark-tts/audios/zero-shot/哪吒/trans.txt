@@ -1,0 +1,7 @@
+"nezhai_49": {
+"index": "nezhai_49",
+"prompt_text": "别烦我，让我一个人安静死去。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data/wavs/nezhai_49.wav",
+"text_zh": "他们说我注定不配拥有什么，注定要背负那些沉重的枷锁，活在他们的期望里。每天都得做那些他们安排好的事，像个没有自由的傀儡，根本没法活成自己。这个世界，这些人，真的一点也不值得我去在乎。",
+"text_en": "They say I'm destined to have nothing, doomed to carry those heavy chains, living according to their expectations. Every day, I'm forced to do the things they've planned for me, like a puppet with no freedom, unable to live as myself. This world, these people, really aren't worth my concern at all."
+},

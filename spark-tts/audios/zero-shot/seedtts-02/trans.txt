@@ -1,0 +1,7 @@
+"seedtts-02": {
+"index": "seedtts-02",
+"prompt_text": "A chance to leave him alone. But no, she just wanted to see him again. Anna, you don't know how it feels to lose a sister. Anna, I'm sorry, but your father asked me not to tell you anything.",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data/wavs/seedtts-02.wav",
+"text_zh": "Dealing with family secrets is never easy. Yet, sometimes, omission is a form of protection, intending to safeguard some from the harsh truths. One day, I hope you understand the reasons behind my actions. Until then, Anna, please, bear with me.",
+"text_en": "处理家庭秘密从来都不是一件容易的事。然而，有时候，隐瞒是一种保护形式，旨在保护一些人免受残酷的真相伤害。有一天，我希望你能理解我行为背后的原因。在那之前，安娜，请容忍我。"
+},

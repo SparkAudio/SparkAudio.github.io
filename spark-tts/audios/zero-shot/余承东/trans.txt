@@ -1,0 +1,7 @@
+"yuchengdong_03": {
+"index": "yuchengdong_03",
+"prompt_text": "分别和国内四大车厂来打造了4个界，分别是问界、智界、享界和尊界。其中啊最高端的就是说我们和江淮打造了尊界啊，是百万级的豪车。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/yuchengdong_03.mp3",
+"text_zh": "我们正在不断打破技术的边界，打造更加智能、更加人性化的产品。未来的智能手机、智能设备，将不再仅仅是工具，它们将成为我们生活的一部分，帮助我们更加高效、更加便捷地与世界连接。",
+"text_en": "We're pushing technology's limits to create smarter, more user-friendly products. In the future, smartphones and smart devices will be part of our lives, helping us connect more easily and efficiently."
+}

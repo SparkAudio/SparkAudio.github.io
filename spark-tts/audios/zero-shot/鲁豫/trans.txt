@@ -1,0 +1,7 @@
+"jialing_15": {
+"index": "ly_jialing_15",
+"prompt_text": "就你就看到一个一个数字，然后尤其是你有一段，能够明显感到你处于一个平静期的时候，你会想哦，数字好冷静，但冷静的背后那种。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/jialing_15.mp3",
+"text_zh": "你知道吗，人工智能就像是我们生活中的一个“无形伙伴”，它不声不响地走进了我们的世界，改变了我们的工作、生活、甚至思维方式。它让我们看到了很多可能性，也让我们意识到，未来的生活可能比我们想象的还要复杂和美好。",
+"text_en": "Did you know that artificial intelligence is like an \"invisible partner\" in our lives? It quietly entered our world, changing our work, our lives, and even the way we think. It has shown us many possibilities and made us realize that the future could be more complex and beautiful than we imagine."
+},

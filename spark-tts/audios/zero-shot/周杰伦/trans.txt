@@ -1,0 +1,7 @@
+"jay_0": {
+"index": "jay_0",
+"prompt_text": "对我来讲是一种荣幸但是也是压力蛮大的，不过我觉得是一种，呃，很好的一个挑战。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/jay_0.wav",
+"text_zh": "我觉得这种运动其实不是说靠机会的，我觉得对每个人来讲，像我们歌手来讲，我觉得其实都是你要自己去努力，然后才可以达到自己的梦想。",
+"text_en": "I don't think this kind of sport is about relying on luck. For each of us, especially for singers like us, I believe it's all about putting in the effort yourself. Only then can you reach your dreams."
+},

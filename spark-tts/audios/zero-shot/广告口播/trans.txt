@@ -1,0 +1,9 @@
+{
+"jialing_14": {
+"index": "gg_jialing_14",
+"prompt_text": "吃燕窝就选燕之屋，本节目由26年专注高品质燕窝的燕之屋冠名播出。豆奶牛奶换着喝，营养更均衡，本节目由豆本豆豆奶特约播出。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/jialing_14S.mp3",
+"text_zh": "智能生活，触手可及，本节目由致力于人工智能创新的未来公司冠名播出。数据驱动决策，为你加速未来，本节目由深度学习技术领导者，未来科技特约播出。打造智慧城市新时代，本节目由未来智能硬件先锋，未来科技赞助播出。",
+"text_en": "Smart living, within reach. This programme is proudly sponsored by Future Company, dedicated to AI innovation. Data-driven decision-making, accelerating your future. This programme is brought to you by the leaders in deep learning technology, Future Tech. Building the new era of smart cities, this programme is sponsored by Future Technology, a pioneer in intelligent hardware."
+}
+}

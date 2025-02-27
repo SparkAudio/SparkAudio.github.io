@@ -1,0 +1,7 @@
+"trump_0": {
+"index": "trump_0",
+"prompt_text": "In short, we embarked on a mission to make America great again, for all Americans.",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/trump_0.wav",
+"text_zh": "我们知道技术发展很快，但人工智能的发展更为迅速。它已经在改变我们的生活——从我们的工作和联系方式，到我们如何应对世界上最大的挑战。",
+"text_en": "We know technology is advancing quickly, but AI is moving even faster. It's already transforming our lives – from the way we work and stay connected, to how we tackle some of the world's biggest challenges."
+},

@@ -1,0 +1,8 @@
+{
+"zhongli_en": {
+"index": "zhongli_en",
+"prompt_text": "Every type of tea is unique. The more you drink, the more you will understand the subtle differences. Smelling the aroma will reveal the quality of the tea.",
+"wav_path": "/aifs4su/mmdata/rawdata/speech/Game_Genshin/English/钟离/vo_EQTJ005_2_zhongli_05.wav",
+"text_zh": "夜叉一族是璃月的功臣，他们历经战事，牺牲良多。近至海港，远至层岩，一直以来，璃月都因他们的庇佑而平安。",
+"text_en": "They were loyal servants of Liyue. They lived through a bitter war and sacrificed much. All of Liyue, from harbor to chasm, is indebted to the yakshas for their protection over the years."
+}

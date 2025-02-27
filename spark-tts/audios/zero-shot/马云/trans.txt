@@ -1,0 +1,7 @@
+"mayun_07": {
+"index": "mayun_07",
+"prompt_text": "但是你要深信这东西的前景，你要深信这个东西可以给别人带来的真正的价值。如果你坚信，如果你觉得有机会，那就往前走。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/mayun_07.wav",
+"text_zh": "我们每个人都在追求不同的目标，很多人认为成功就是要赚很多钱，但我认为，成功的真正含义是：如何让你的想法改变世界，让更多的人受益。所以，不要怕失败，不要怕挫折，最重要的是，你要始终保持一颗学习的心，永远不放弃。",
+"text_en": "We all pursue different goals. Many think success means making money, but I believe it's about changing the world and helping others. So, don't fear failure or setbacks—keep learning and never give up."
+},

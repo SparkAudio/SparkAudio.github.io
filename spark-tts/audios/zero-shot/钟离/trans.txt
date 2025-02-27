@@ -1,0 +1,7 @@
+"zhongli_zh": {
+"index": "zhongli_zh",
+"prompt_text": "茶叶各有特征，喝得多了，自然有些心得。茶品好坏，闻香味便可略知一二了。",
+"wav_path": "/aifs4su/mmdata/rawdata/speech/Game_Genshin/Chinese/钟离/vo_EQTJ005_2_zhongli_05.wav",
+"text_zh": "夜叉一族是璃月的功臣，他们历经战事，牺牲良多。近至海港，远至层岩，一直以来，璃月都因他们的庇佑而平安。",
+"text_en": "They were loyal servants of Liyue. They lived through a bitter war and sacrificed much. All of Liyue, from harbor to chasm, is indebted to the yakshas for their protection over the years."
+}

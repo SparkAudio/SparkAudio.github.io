@@ -1,0 +1,7 @@
+"seedtts-03": {
+"index": "seedtts-03",
+"prompt_text": "Are you familiar with it, slice the steak and place the strips on top, then garnish with the dried cranberries, pine nuts and blue cheese.",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data/wavs/seedtts-03.wav",
+"text_zh": "听着你的话，我心里五味杂陈。虽然我愿意一直在你身边，承担一切不幸，但我知道只有让你自己面对，才能真正让你变得更强大。所以，你要记得，无论面对何种困难，都请你坚强，我会在心里一直支持你的。",
+"text_en": "The combinations of different textures and flavors create a perfect harmony. The succulence of the steak, the tartness of the cranberries, the crunch of pine nuts, and creaminess of blue cheese make it a truly delectable delight. Enjoy your culinary adventure!"
+},

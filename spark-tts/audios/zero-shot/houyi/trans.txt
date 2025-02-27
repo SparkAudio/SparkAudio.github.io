@@ -1,0 +1,7 @@
+"houyi_0": {
+"index": "houyi_0",
+"prompt_text": "周日被我射熄火了，所以今天是周一。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/houyi_0.wav",
+"text_zh": "有一种撕心裂肺的感觉，是辣椒，我加了辣椒！",
+"text_en": "There's this heart-wrenching feeling—it's the chili, I added chili!"
+},

@@ -1,0 +1,7 @@
+"furina_zh": {
+"index": "furina_zh",
+"prompt_text": "毕竟曾经我也是枫丹最耀眼的大明星，舞台上的功夫自然样样精通，音乐剧也是不在话下。",
+"wav_path": "/aifs4su/mmdata/rawdata/speech/Game_Genshin/Chinese/芙宁娜/vo_FNNLQ001_2_furina_14.wav",
+"text_zh": "我对自己的歌唱水平还是很有自信的，不过值得我开口唱诵的段落可不多。希望那些剧团里的创作者们加把劲，不要让我等太久。",
+"text_en": "I'm very confident in my singing skills, but there aren't many pieces of music that are worthy of my vocal prowess. I hope the creatives in the theater troupe get their act together and don't keep me waiting in vain"
+}

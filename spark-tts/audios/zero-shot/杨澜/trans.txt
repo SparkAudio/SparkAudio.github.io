@@ -1,0 +1,7 @@
+"dehua_04": {
+"index": "yl_dehua_04",
+"prompt_text": "但是你的成本已经全部都进去了。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/dehua_04.mp3",
+"text_zh": "语音合成技术，其实早已经悄悄走进了我们的生活。从智能语音助手，到有声读物，再到个性化语音复刻，这项技术正在改变我们获取信息、与世界互动的方式。而且它的进步速度，远超我们的想象。",
+"text_en": "Speech synthesis technology has quietly integrated into our daily lives. From smart voice assistants to audiobooks and even personalised voice cloning, this technology is transforming the way we access information and interact with the world. Moreover, its advancement is progressing at a pace far beyond our imagination."
+},

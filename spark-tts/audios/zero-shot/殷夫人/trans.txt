@@ -1,0 +1,7 @@
+"nezhai_22": {
+"index": "nezhai_22",
+"prompt_text": "出去跟爹娘一起斩妖除魔，为民除害。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data/wavs/nezhai_22.wav",
+"text_zh": "你是天地间最独特的存在，所有的磨难只是为你铺设更坚固的道路。无论前方有多少风雨，我都相信，你必定能够撑起一片属于自己的天空。",
+"text_en": "You are the most unique existence in the world, and all the hardships are just paving a stronger path for you. No matter how many storms lie ahead, I believe you will definitely be able to hold up a sky that belongs to you."
+},

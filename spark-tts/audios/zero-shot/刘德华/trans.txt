@@ -1,0 +1,7 @@
+"dehua_09": {
+"index": "dehua_09",
+"prompt_text": "所以我觉得这些成功的电影他都很真诚，而且很有生命力。他就跟当年的那个宁浩的那个一模一样。",
+"wav_path": "/aifs4su/xinshengwang/data/voxbox/speech/collect_data2/wavs/dehua_09.mp3",
+"text_zh": "所以我觉得好的技术，它一定是有温度的，能够真正服务于大家，而不是冷冰冰地摆在那里。就像现在的语音合成技术，越来越自然，越来越贴近人们的需求，这种发展是有生命力的。它就跟当年那些突破性的科技一样，一开始可能觉得很新鲜，但慢慢地，它就融入生活，变成大家离不开的一部分了。",
+"text_en": "I think good technology should feel warm and truly serve people, not just sit there like something cold and lifeless. Take speech synthesis, for example—it's getting more natural and closer to what people actually need. That's real progress, something with life in it. It's just like those game-changing technologies from the past—at first, they seemed new and exciting, but before you know it, they become a part of everyday life, something we can't imagine living without."
+},
