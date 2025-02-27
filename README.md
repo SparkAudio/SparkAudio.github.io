@@ -1,2 +1,1 @@
-# SparkAudio.github.io
-webpage of SparkAudio
+# sparkaudio.github.io
